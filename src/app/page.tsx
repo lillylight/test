@@ -329,7 +329,7 @@ export default function Home() {
                 ) : (
                   <ReadingResults 
                     prediction={prediction} 
-                    onNewReading={handleNewReading} 
+                    onNewReadingAction={handleNewReading} 
                   />
                 )}
               </div>
