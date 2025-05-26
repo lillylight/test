@@ -222,7 +222,7 @@ export function PaymentComponent({ onPaymentSuccess }: PaymentComponentProps) {
         </p>
         
         {showDisclaimer ? (
-          <div className="bg-gray-800/70 p-6 rounded-2xl mb-6 border border-gray-700/50 shadow-lg sm:p-4 sm:mb-4">
+          <div className="bg-secondary bg-opacity-90 p-6 rounded-2xl mb-6 border border-gray-600/30 shadow-lg sm:p-4 sm:mb-4">
             <h3 className="text-xl font-bold mb-4 sm:text-lg">Disclaimer</h3>
             <p className="mb-4 text-gray-300 sm:text-sm">
               By proceeding with this payment, you acknowledge that:
@@ -274,7 +274,7 @@ export function PaymentComponent({ onPaymentSuccess }: PaymentComponentProps) {
               </div>
             ) : (
               <div>
-                <div className="relative mb-6 p-6 bg-gray-800/70 rounded-2xl border border-gray-700/50 shadow-lg sm:p-4 sm:mb-4">
+                <div className="relative mb-6 p-6 bg-secondary bg-opacity-90 rounded-2xl border border-gray-600/30 shadow-lg sm:p-4 sm:mb-4">
                   {error && (
                     <div className="bg-red-900/30 p-3 rounded-xl mb-4 text-red-300 text-sm sm:p-2 sm:mb-3">
                       {error}
@@ -284,18 +284,18 @@ export function PaymentComponent({ onPaymentSuccess }: PaymentComponentProps) {
                   <div className="relative">
                     {/* Always render the Checkout component or the success UI */}
                     {paymentVerified ? (
-                      <div className="bg-green-900/30 p-4 rounded-xl text-green-300 flex flex-col items-center justify-center max-h-[60vh] overflow-hidden sm:p-3">
+                      <div className="bg-secondary bg-opacity-90 p-4 rounded-xl border border-gray-600/30 text-green-200 flex flex-col items-center justify-center max-h-[60vh] overflow-hidden sm:p-3">
                         <svg className="w-10 h-10 text-green-400 mb-2 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <h3 className="text-lg font-bold mb-1 sm:text-base">Payment Verified!</h3>
+                        <h3 className="text-lg font-bold mb-1 sm:text-base text-green-200">Payment Verified!</h3>
                         <p className="mb-2 text-sm sm:text-xs">Your payment has been successfully processed.</p>
                         <p className="text-xs sm:text-[10px]">Preparing your personalized birth time prediction...</p>
                         <div className="mt-3 w-full bg-gray-700/50 h-2 rounded-full overflow-hidden sm:mt-2">
                           <div className="bg-gradient-to-r from-green-400 to-teal-500 h-full rounded-full animate-pulse" style={{ width: '100%' }}></div>
                         </div>
                         
-                        <div className="mt-4 py-2 px-4 bg-indigo-900/50 rounded-xl text-indigo-200 animate-pulse sm:mt-3 sm:py-1 sm:px-3">
+                        <div className="mt-4 py-2 px-4 bg-gray-700/70 rounded-xl text-gray-100 animate-pulse sm:mt-3 sm:py-1 sm:px-3">
                           <p className="font-medium text-sm sm:text-xs">Generating prediction...</p>
                           <p className="text-xs mt-1 sm:text-[10px]">Please wait while we prepare your results</p>
                         </div>

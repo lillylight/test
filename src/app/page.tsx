@@ -285,7 +285,7 @@ export default function Home() {
             
             {currentStep === 'payment' && (
               <div className="animate-slide-left">
-                <PaymentComponent onPaymentSuccessAction={handlePaymentSuccess} />
+                <PaymentComponent onPaymentSuccess={handlePaymentSuccess} />
               </div>
             )}
             
