@@ -2,10 +2,12 @@ import swisseph as swe
 import datetime
 import sys
 import json
+import os
 
-# Set eph path and JPL file
-swe.set_ephe_path(r"C:\Users\lisel\Downloads\astroclock edits\Astroclock with fixed responsiveness\Astroclock\astro")
-swe.set_jpl_file(r"C:\Users\lisel\Downloads\astroclock edits\Astroclock with fixed responsiveness\Astroclock\astro\de406e.eph")
+# Set eph path and JPL file using relative paths that work in any environment
+current_dir = os.getcwd()
+swe.set_ephe_path(current_dir)  # Use current directory as ephemeris path
+swe.set_jpl_file(os.path.join(current_dir, "de406e.eph"))  # Look for de406e.eph in current directory
 swe.set_sid_mode(swe.SIDM_LAHIRI)
 
 # === NO LOCATION PRESETS: Use user input for lat/lon/tz ===
