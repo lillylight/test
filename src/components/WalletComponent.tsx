@@ -26,7 +26,7 @@ export function WalletComponent() {
   // Fetch wallet balance
   const { data: balanceData } = useBalance({
     address: address,
-    watch: true,
+    // Note: removed 'watch: true' as it's not supported in this version
   });
 
   // Handle client-side mounting to prevent hydration errors

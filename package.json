@@ -1,7 +1,8 @@
 {
-  "name": "nako",
+  "name": "astro-clock",
   "version": "0.1.0",
   "private": true,
+  "description": "Astro Clock (formerly known as Nako) - A sophisticated astrology and ephemeris calculation application with blockchain integration",
   "engines": {
     "node": ">=18.0.0"
   },
