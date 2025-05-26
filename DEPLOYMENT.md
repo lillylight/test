@@ -69,6 +69,47 @@ Vercel automatically sets up continuous deployment. Any changes pushed to your m
 
 ## Monitoring and Analytics
 
+---
+
+# Render Deployment Instructions
+
+## 1. Prerequisites
+- Make sure `de406e.eph` is NOT in your repo (it’s in `.gitignore`).
+- Your code is pushed to GitHub: https://github.com/lillylight/test
+
+## 2. Large File Download
+- The file `de406e.eph` will be downloaded automatically during build via `download-assets.sh`.
+- The Dropbox direct download link is already set in `download-assets.sh`.
+
+## 3. Service Setup on Render
+- **Build Command:**
+  ```sh
+  ./download-assets.sh && npm install && npm run build
+  ```
+- **Start Command:**
+  ```sh
+  npm start
+  ```
+- **Python Requirements:**
+  - Render will install from `requirements.txt` (contains `swisseph`).
+
+## 4. Environment
+- Make sure both Node.js and Python are enabled in your Render environment (Render supports this by default).
+- Add any required environment variables for your app.
+
+## 5. Deploy
+- Connect your GitHub repo to Render.
+- Deploy as a single service.
+- Test the API endpoint `/api/generate-ephemeris-node` to ensure it works.
+
+## 6. Troubleshooting
+- If you see errors about missing files or Python modules, check:
+  - The Dropbox link in `download-assets.sh`
+  - That `swisseph` is in `requirements.txt`
+  - That the build/start commands are set as above
+
+---
+
 1. Use the Vercel dashboard to monitor your application
 2. Set up [Vercel Analytics](https://vercel.com/analytics) for insights into user behavior
 3. Configure [Error Monitoring](https://vercel.com/docs/error-handling) to track and fix issues
