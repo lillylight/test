@@ -113,20 +113,20 @@ export function ReadingResults({ prediction, onNewReading }: ReadingResultsProps
         <motion.div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full mb-4" variants={itemVariants}>
           <button
             onClick={handleDownload}
-            className="flex-1 py-3 bg-gradient-to-r from-green-600 to-teal-600 hover:opacity-90 rounded-full shadow-lg font-medium text-white sm:py-2 sm:text-sm"
+            className="flex-1 py-3 bg-gray-700 hover:bg-gray-600 rounded-full shadow-lg font-medium text-white sm:py-2 sm:text-sm"
           >
             Download
           </button>
           <button
             onClick={handleCopyToClipboard}
-            className="flex-1 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:opacity-90 rounded-full shadow-lg font-medium text-white sm:py-2 sm:text-sm"
+            className="flex-1 py-3 bg-gray-700 hover:bg-gray-600 rounded-full shadow-lg font-medium text-white sm:py-2 sm:text-sm"
           >
             {copySuccess || 'Copy'}
           </button>
           <div className="relative flex-1">
             <button
               onClick={toggleShareMenu}
-              className="w-full py-3 bg-gradient-to-r from-blue-600 to-cyan-600 hover:opacity-90 rounded-full shadow-lg font-medium text-white sm:py-2 sm:text-sm"
+              className="w-full py-3 bg-gray-700 hover:bg-gray-600 rounded-full shadow-lg font-medium text-white sm:py-2 sm:text-sm"
             >
               Share
             </button>
@@ -141,14 +141,14 @@ export function ReadingResults({ prediction, onNewReading }: ReadingResultsProps
                 >
                   <button
                     onClick={handleShareToX}
-                    className="w-full flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-white text-sm"
+                    className="w-full flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 text-white text-sm"
                   >
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22.162 5.656l-7.769 9.418 4.359 5.927h-3.498l-2.826-3.876-3.193 3.876h-3.498l4.359-5.927-7.769-9.418h3.498l6.02 7.292 6.02-7.292z"/></svg>
                     Share to X
                   </button>
                   <button
                     onClick={handleShareToFacebook}
-                    className="w-full flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 text-white text-sm"
+                    className="w-full flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 text-white text-sm"
                   >
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22.676 0h-21.352c-.731 0-1.324.593-1.324 1.324v21.352c0 .731.593 1.324 1.324 1.324h11.495v-9.294h-3.124v-3.622h3.124v-2.672c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.92.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12v9.294h6.116c.73 0 1.324-.593 1.324-1.324v-21.352c0-.731-.594-1.324-1.324-1.324z"/></svg>
                     Share to Facebook
@@ -160,7 +160,7 @@ export function ReadingResults({ prediction, onNewReading }: ReadingResultsProps
         </motion.div>
         <motion.button
           onClick={onNewReading}
-          className="w-full py-3 bg-gradient-to-r from-pink-600 to-purple-600 hover:opacity-90 rounded-full shadow-lg font-medium text-white mt-2 sm:py-2 sm:text-sm"
+          className="w-full py-3 bg-gray-700 hover:bg-gray-600 rounded-full shadow-lg font-medium text-white mt-2 sm:py-2 sm:text-sm"
           variants={itemVariants}
         >
           New Prediction
