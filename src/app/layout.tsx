@@ -28,6 +28,8 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={true}>
       <head>
         <MetaTags />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <title>Astro Clock</title>
       </head>
       <body
         suppressHydrationWarning={true}

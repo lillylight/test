@@ -5,10 +5,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 interface ReadingResultsProps {
   prediction: string;
-  onNewReading: () => void;
+  onNewReadingAction: () => void;
 }
 
-export function ReadingResults({ prediction, onNewReading }: ReadingResultsProps) {
+export function ReadingResults({ prediction, onNewReadingAction }: ReadingResultsProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [copySuccess, setCopySuccess] = useState('');
   const [showShareMenu, setShowShareMenu] = useState(false);
@@ -92,41 +92,41 @@ export function ReadingResults({ prediction, onNewReading }: ReadingResultsProps
 
   // Modern, responsive UI wrapper
   return (
-    <div className="max-w-xl mx-auto bg-secondary bg-opacity-90 p-6 rounded-3xl shadow-2xl border border-gray-600/30 my-8 mx-4 sm:my-4 sm:mx-2">
+    <div className="max-w-xl mx-auto bg-gradient-to-br from-gray-800/80 to-gray-900/90 backdrop-blur-md p-8 rounded-3xl shadow-2xl border border-gray-600/40 my-10 mx-4 sm:my-6 sm:mx-2">
       <motion.div
         className="flex flex-col items-center justify-center w-full"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <motion.h2 className="text-2xl font-bold mb-4 sm:text-xl text-center" variants={itemVariants}>
+        <motion.h2 className="text-3xl font-extrabold mb-6 sm:text-2xl text-center text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400 drop-shadow-lg" variants={itemVariants}>
           Your Personalized Birth Time Prediction
         </motion.h2>
         <motion.div
-          className="w-full mb-6 bg-gray-900/80 p-6 rounded-2xl border border-gray-700/50 shadow-lg sm:p-4 sm:mb-4"
+          className="w-full mb-7 bg-gray-900/80 p-7 rounded-2xl border border-gray-700/50 shadow-lg sm:p-4 sm:mb-4"
           variants={itemVariants}
         >
-          <div ref={contentRef} className="text-lg text-gray-100 whitespace-pre-line break-words text-center sm:text-base">
+          <div ref={contentRef} className="text-lg text-gray-100 whitespace-pre-line break-words text-center sm:text-base leading-relaxed">
             {prediction}
           </div>
         </motion.div>
         <motion.div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full mb-4" variants={itemVariants}>
           <button
             onClick={handleDownload}
-            className="flex-1 py-3 bg-gray-700 hover:bg-gray-600 rounded-full shadow-lg font-medium text-white sm:py-2 sm:text-sm"
+            className="flex-1 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 focus:outline-none focus:ring-2 focus:ring-indigo-400/60 rounded-full shadow-xl font-semibold text-white transition-all duration-200 sm:py-2 sm:text-sm tracking-wide"
           >
             Download
           </button>
           <button
             onClick={handleCopyToClipboard}
-            className="flex-1 py-3 bg-gray-700 hover:bg-gray-600 rounded-full shadow-lg font-medium text-white sm:py-2 sm:text-sm"
+            className="flex-1 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 focus:outline-none focus:ring-2 focus:ring-indigo-400/60 rounded-full shadow-xl font-semibold text-white transition-all duration-200 sm:py-2 sm:text-sm tracking-wide"
           >
             {copySuccess || 'Copy'}
           </button>
           <div className="relative flex-1">
             <button
               onClick={toggleShareMenu}
-              className="w-full py-3 bg-gray-700 hover:bg-gray-600 rounded-full shadow-lg font-medium text-white sm:py-2 sm:text-sm"
+              className="w-full py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 focus:outline-none focus:ring-2 focus:ring-indigo-400/60 rounded-full shadow-xl font-semibold text-white transition-all duration-200 sm:py-2 sm:text-sm tracking-wide"
             >
               Share
             </button>
@@ -141,14 +141,14 @@ export function ReadingResults({ prediction, onNewReading }: ReadingResultsProps
                 >
                   <button
                     onClick={handleShareToX}
-                    className="w-full flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 text-white text-sm"
+                    className="w-full flex items-center gap-2 px-3 py-2 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white text-sm shadow-md font-medium transition-all duration-200"
                   >
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22.162 5.656l-7.769 9.418 4.359 5.927h-3.498l-2.826-3.876-3.193 3.876h-3.498l4.359-5.927-7.769-9.418h3.498l6.02 7.292 6.02-7.292z"/></svg>
                     Share to X
                   </button>
                   <button
                     onClick={handleShareToFacebook}
-                    className="w-full flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-700 hover:bg-gray-600 text-white text-sm"
+                    className="w-full flex items-center gap-2 px-3 py-2 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white text-sm shadow-md font-medium transition-all duration-200"
                   >
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22.676 0h-21.352c-.731 0-1.324.593-1.324 1.324v21.352c0 .731.593 1.324 1.324 1.324h11.495v-9.294h-3.124v-3.622h3.124v-2.672c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.92.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12v9.294h6.116c.73 0 1.324-.593 1.324-1.324v-21.352c0-.731-.594-1.324-1.324-1.324z"/></svg>
                     Share to Facebook
@@ -159,8 +159,8 @@ export function ReadingResults({ prediction, onNewReading }: ReadingResultsProps
           </div>
         </motion.div>
         <motion.button
-          onClick={onNewReading}
-          className="w-full py-3 bg-gray-700 hover:bg-gray-600 rounded-full shadow-lg font-medium text-white mt-2 sm:py-2 sm:text-sm"
+          onClick={onNewReadingAction}
+          className="w-full py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 focus:outline-none focus:ring-2 focus:ring-indigo-400/60 rounded-full shadow-xl font-semibold text-white mt-3 sm:py-2 sm:text-sm tracking-wide transition-all duration-200"
           variants={itemVariants}
         >
           New Prediction
