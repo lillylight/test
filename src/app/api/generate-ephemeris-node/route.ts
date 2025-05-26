@@ -1,12 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { spawn } from 'child_process';
 
-export const config = {
-  api: {
-    bodyParser: true,
-    externalResolver: true,
-  },
-};
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
